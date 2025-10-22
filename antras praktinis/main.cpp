@@ -97,7 +97,6 @@ void rodytiMokini() {
         }
 
         if (!rastas) cout << "Mokinys nerastas.\n";
-
         int testi = ragh("\nAr norite testi sia funkcija? (1 - Taip 0 - Ne): ", 0, 1);
         if (testi == 0) break;
     }
@@ -131,7 +130,6 @@ void atnaujintiPazymi() {
         }
 
         if (!rastas) cout << "Mokinys nerastas.\n";
-
         int testi = ragh("\nAr norite testi sia funkcija? (1 - Taip 0 - Ne): ", 0, 1);
         if (testi == 0) break;
     }
@@ -164,7 +162,6 @@ void pasalintiMokini() {
         }
 
         if (!rastas) cout << "Toks mokinys nerastas.\n";
-
         int testi = ragh("\nAr norite testi sia funkcija? (1 - Taip 0 - Ne): ", 0, 1);
         if (testi == 0) break;
     }
@@ -193,8 +190,6 @@ int main() {
             case 0: cout << "Programa baigta.\n"; break;
             default: cout << "Neteisingas pasirinkimas!\n"; break;
         }
-
     } while (pasirinkimas != 0);
-
     return 0;
 }
