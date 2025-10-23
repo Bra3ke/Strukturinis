@@ -39,7 +39,7 @@ void pridetiMokini() {
         cout << "Iveskite mokinio varda: ";
         cin >> vardai[mokiniuKiekis];
 
-        pazymiuKiekis[mokiniuKiekis] = ragh("Kiek pazymiu norite ivesti (1-10): ", 1, MAX_PAZYMIAI);
+        pazymiuKiekis[mokiniuKiekis] = ragh("Kiek pazymiu norite ivesti 1-10: ", 1, MAX_PAZYMIAI);
 
         for (int j = 0; j < pazymiuKiekis[mokiniuKiekis]; j++) {
             pazymiai[mokiniuKiekis][j] = ragh("Iveskite pazymi " + to_string(j + 1) + ": ", 1, 10);
@@ -48,7 +48,7 @@ void pridetiMokini() {
         mokiniuKiekis++;
         cout << "Mokinys sekmingai pridetas!\n";
 
-        int testi = ragh("\nAr norite testi sia funkcija? (1 - Taip, 0 - Ne): ", 0, 1);
+        int testi = ragh("\nAr norite testi sia funkcija? 1 - Taip, 0 - Ne: ", 0, 1);
         if (testi == 0) break;
     }
 }
@@ -68,7 +68,7 @@ void rodytiVisus() {
             cout << endl;
         }
 
-        int testi = ragh("\nAr norite testi sia funkcija? (1 - Taip 0 - Ne): ", 0, 1);
+        int testi = ragh("\nAr norite testi sia funkcija? 1 - Taip 0 - Ne: ", 0, 1);
         if (testi == 0) break;
     }
 }
@@ -97,7 +97,7 @@ void rodytiMokini() {
         }
 
         if (!rastas) cout << "Mokinys nerastas.\n";
-        int testi = ragh("\nAr norite testi sia funkcija? (1 - Taip 0 - Ne): ", 0, 1);
+        int testi = ragh("\nAr norite testi sia funkcija? 1 - Taip 0 - Ne: ", 0, 1);
         if (testi == 0) break;
     }
 }
@@ -122,15 +122,15 @@ void atnaujintiPazymi() {
                     cout << "[" << j + 1 << "]" << pazymiai[i][j] << " ";
                 cout << endl;
 
-                int nr = ragh("Kuri pazymi norite pakeisti (1-" + to_string(pazymiuKiekis[i]) + "): ", 1, pazymiuKiekis[i]);
-                pazymiai[i][nr - 1] = ragh("Naujas pazymys (1-10): ", 1, 10);
+                int nr = ragh("Kuri pazymi norite pakeisti 1-" + to_string(pazymiuKiekis[i]) + ": ", 1, pazymiuKiekis[i]);
+                pazymiai[i][nr - 1] = ragh("Naujas pazymys 1-10: ", 1, 10);
                 cout << "Pazymys atnaujintas!\n";
                 break;
             }
         }
 
         if (!rastas) cout << "Mokinys nerastas.\n";
-        int testi = ragh("\nAr norite testi sia funkcija? (1 - Taip 0 - Ne): ", 0, 1);
+        int testi = ragh("\nAr norite testi sia funkcija? 1 - Taip 0 - Ne: ", 0, 1);
         if (testi == 0) break;
     }
 }
@@ -161,8 +161,8 @@ void pasalintiMokini() {
             }
         }
 
-        if (!rastas) cout << "Toks mokinys nerastas.\n";
-        int testi = ragh("\nAr norite testi sia funkcija? (1 - Taip 0 - Ne): ", 0, 1);
+        if (!rastas) cout << "Tokio mokinio nera.\n";
+        int testi = ragh("\nAr norite testi sia funkcija? 1 - Taip 0 - Ne: ", 0, 1);
         if (testi == 0) break;
     }
 }
