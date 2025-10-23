@@ -4,8 +4,8 @@
 #include <limits>
 using namespace std;
 
-constexpr int MAX_MOKINIAI = 100;
-constexpr int MAX_PAZYMIAI = 10;
+constexpr int MAX_MOKINIAI = 3;
+constexpr int MAX_PAZYMIAI = 3;
 
 int mokiniuKiekis = 0;
 string vardai[MAX_MOKINIAI];
@@ -152,9 +152,16 @@ void pasalintiMokini() {
                 for (int j = i; j < mokiniuKiekis - 1; j++) {
                     vardai[j] = vardai[j + 1];
                     pazymiuKiekis[j] = pazymiuKiekis[j + 1];
-                    for (int k = 0; k < MAX_PAZYMIAI; k++)
+                    for (int k = 0; k < MAX_PAZYMIAI; k++) {
                         pazymiai[j][k] = pazymiai[j + 1][k];
+                    }
                 }
+                vardai[mokiniuKiekis - 1].clear();
+                pazymiuKiekis[mokiniuKiekis - 1] = 0;
+                for (int k = 0; k < MAX_PAZYMIAI; k++) {
+                    pazymiai[mokiniuKiekis - 1][k] = 0;
+                }
+                mokiniuKiekis--;
                 cout << "Mokinys pasalintas\n";
                 rastas = true;
                 break;
