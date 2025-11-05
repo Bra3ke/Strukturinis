@@ -8,7 +8,7 @@ using namespace std;
 
 void skaiciuotiBilietus() {
     ifstream in("bilietai.txt");
-    if (!in.is_open()) in.open("..\\bilietai.txt");
+    if (!in) in.open("..\\bilietai.txt");
     ofstream out("sales_report.txt");
 
     if (!in.is_open() || !out.is_open()) {
@@ -19,24 +19,23 @@ void skaiciuotiBilietus() {
     cout << fixed << setprecision(2);
     out << fixed << setprecision(2);
 
-    long long totalTickets = 0;
+    int totalTickets = 0;
     double totalSales = 0.0;
 
     out << "Bilietu pardavimai" << '\n';
     out << "Kaina    Kiekis    Suma" << '\n';
 
-    double price; long long count;
+    double price; int count;
     while (in >> price >> count) {
         double sum = price * static_cast<double>(count);
         totalTickets += count;
         totalSales += sum;
-        out << setw(7) << price << "  " << setw(6) << count << "  " << setw(10) << sum << '\n';
+        out << price << "  " << count << "  " << sum << '\n';
     }
 
     cout << "Is viso parduota bilietu: " << totalTickets << endl;
     cout << "Bendra suma: " << totalSales << " EUR" << endl;
 
-    out << "-----------------------------" << '\n';
     out << "Is viso bilietu: " << totalTickets << '\n';
     out << "Bendra suma: " << totalSales << " EUR" << '\n';
 
@@ -45,7 +44,7 @@ void skaiciuotiBilietus() {
 
 void skaiciuotiAtlyginimus() {
     ifstream in("salary.txt");
-    if (!in.is_open()) in.open("..\\salary.txt");
+    if (!in) in.open("..\\salary.txt");
     ofstream out("newSalary.txt");
 
     if (!in.is_open() || !out.is_open()) {
@@ -82,7 +81,6 @@ void spausdintiPasirinkimai() {
 }
 
 int main() {
-    ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
     while (true) {
