@@ -6,15 +6,36 @@
 
 using namespace std;
 
+void skaiciuotiAtlyginimus() {
+    ifstream in("salary.txt");
+    in.open("..\\salary.txt");
+    ofstream out("newSalary.txt");
+
+    cout << fixed << setprecision(2);
+    out << fixed << setprecision(2);
+
+    string last, first;
+    double current, raisePct;
+    int processed = 0;
+
+    while (in >> last >> first >> current >> raisePct) {
+        double newSalary = current * (1.0 + raisePct / 100.0);
+        cout << last << ' ' << first << ' ' << newSalary << '\n';
+        out << last << ' ' << first << ' ' << newSalary << '\n';
+        ++processed;
+    }
+
+    if (processed == 0) {
+        cout << "Klaida" << endl;
+    } else {
+        cout << "Rezultatai irasyti i newSalary.txt" << endl;
+    }
+}
+
 void skaiciuotiBilietus() {
     ifstream in("bilietai.txt");
-    if (!in) in.open("..\\bilietai.txt");
+    in.open("..\\bilietai.txt");
     ofstream out("sales_report.txt");
-
-    if (!in.is_open() || !out.is_open()) {
-        cout << "Klaida" << endl;
-        return;
-    }
 
     cout << fixed << setprecision(2);
     out << fixed << setprecision(2);
@@ -40,37 +61,6 @@ void skaiciuotiBilietus() {
     out << "Bendra suma: " << totalSales << " EUR" << '\n';
 
     cout << "Rezultatai irasyti i sales_report.txt" << endl;
-}
-
-void skaiciuotiAtlyginimus() {
-    ifstream in("salary.txt");
-    if (!in) in.open("..\\salary.txt");
-    ofstream out("newSalary.txt");
-
-    if (!in.is_open() || !out.is_open()) {
-        cout << "Klaida" << endl;
-        return;
-    }
-
-    cout << fixed << setprecision(2);
-    out << fixed << setprecision(2);
-
-    string last, first;
-    double current, raisePct;
-    int processed = 0;
-
-    while (in >> last >> first >> current >> raisePct) {
-        double newSalary = current * (1.0 + raisePct / 100.0);
-        cout << last << ' ' << first << ' ' << newSalary << '\n';
-        out << last << ' ' << first << ' ' << newSalary << '\n';
-        ++processed;
-    }
-
-    if (processed == 0) {
-        cout << "Klaida" << endl;
-    } else {
-        cout << "Rezultatai irasyti i newSalary.txt" << endl;
-    }
 }
 
 void spausdintiPasirinkimai() {
