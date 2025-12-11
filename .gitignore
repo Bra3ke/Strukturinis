@@ -1,1 +1,6 @@
-trecias praktinis/cmake-build-debug/
+cmake-build-debug/
+.idea/
+*.exe
+cmake-build-debug/
+.idea/
+*.exe
