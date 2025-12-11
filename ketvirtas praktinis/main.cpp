@@ -56,7 +56,7 @@ void showMenu() {
              << right << fixed << setprecision(2) << menuList[i].menuPrice << " EUR" << endl;
     }
     cout << "               " << endl;
-    cout << "Pasirinkite patiekalo numeri ir kieki (pvz.: 2 1). 0 - baigti." << endl;
+    cout << "Pasirinkite patiekalo numeri ir kieki (pvz: 2 1). 0 - baigti." << endl;
 }
 
 void printCheck() {
