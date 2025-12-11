@@ -18,7 +18,7 @@ int itemCount = 0;
 void getData() {
     ifstream in("menu.txt");
     if (!in) {
-        cout << "Klaida: nerastas failas menu.txt!" << endl;
+        cout << "Klaida: nerastas failas menu.txt" << endl;
         return;
     }
 
@@ -121,6 +121,5 @@ int main() {
     }
 
     printCheck();
-
     return 0;
 }
