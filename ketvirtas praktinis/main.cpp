@@ -21,31 +21,30 @@ void getData() {
         cout << "Klaida: nerastas failas menu.txt" << endl;
         return;
     }
+    
+    string line; // laikina eilute
 
-    string line;
-    getline(in, line);
+    while (getline(in, line)) {  //skaito faila
+        if (line.empty()) continue;  // praleidzia tuscia eilute
 
-    while (getline(in, line)) {
-        if (line.empty()) continue;
+        size_t lastSpace = line.find_last_of(" \t");  //iesko paskutinio simbolio ar tarpo txt doke kad padetu atskirti kaina ir patiekala
 
-        size_t lastSpace = line.find_last_of(" \t");
-        
         if (lastSpace != string::npos) {
-            string name = line.substr(0, lastSpace);
-            string priceStr = line.substr(lastSpace + 1);
-
-            while (!name.empty() && (name.back() == ' ' || name.back() == '\t')) {
+            string name = line.substr(0, lastSpace);  // patiekalai bus iki kainos
+            string priceStr = line.substr(lastSpace + 1);  // atskiria skaiciu nuo teksto
+            while (!name.empty() && (name.back() == ' ' || name.back() == '\t')) { // pasalina nereikalingus tarpus ar gale
                 name.pop_back();
             }
 
-            if (itemCount < MAX_ITEMS) {
-                menuList[itemCount].menuItem = name;
-                menuList[itemCount].menuPrice = stod(priceStr);
+            if (itemCount < MAX_ITEMS) {  // ziuri ar nevirsija to max 50 patiekalu
+                menuList[itemCount].menuItem = name;  // meniu pavadinimas
+                menuList[itemCount].menuPrice = stod(priceStr);  // konvertuojas is string i double is teksto i skaiciu
                 itemCount++;
             }
         }
     }
-    in.close();
+
+    in.close();  // Uzdaro faila
 }
 
 void showMenu() {
@@ -60,7 +59,7 @@ void showMenu() {
 }
 
 void printCheck() {
-    ofstream out("receipt.txt");
+    ofstream out("cekis.txt");
     
     cout << endl << "SASKAITA" << endl;
     out << "SASKAITA" << endl;
