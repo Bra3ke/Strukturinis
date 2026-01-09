@@ -1,0 +1,3 @@
+C:/Users/urteb/Desktop/clion/abababababababababababa/cmake-build-debug/CMakeFiles/abababababababababababa.dir
+C:/Users/urteb/Desktop/clion/abababababababababababa/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/urteb/Desktop/clion/abababababababababababa/cmake-build-debug/CMakeFiles/rebuild_cache.dir

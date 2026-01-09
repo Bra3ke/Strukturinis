@@ -1,0 +1,7 @@
+ID: 101 Taskai: 40 Procentai: 100.00% Pazymys: 10
+ID: 102 Taskai: 6 Procentai: 15.00% Pazymys: 2
+ID: 103 Taskai: 10 Procentai: 25.00% Pazymys: 3
+ID: 104 Taskai: 10 Procentai: 25.00% Pazymys: 3
+ID: 105 Taskai: 7 Procentai: 17.50% Pazymys: 2
+ID: 106 Taskai: -4 Procentai: 0.00% Pazymys: 1
+ID: 107 Taskai: -20 Procentai: 0.00% Pazymys: 1
